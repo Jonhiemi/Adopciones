@@ -3,35 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General San Martín, Gestión de Residuos</title>
+    <title>Adopción de Mascotas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Gestión de Residuos<br> Gral San Martín, Mdz</h1>
-        <ul id="container-list">
-            <!-- Lista de contenedores se llenará aquí dinámicamente -->
+    <nav>
+        <div class="logo">AA</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#animales">Animales</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
-    </div>
+    </nav>
 
-    <div class="contact-form">
-        <h2>Formulario de Contacto</h2>
-        <form id="contact-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+    <section id="inicio">
+        <h1>Bienvenidos a Adopta Amores, Buscando Hogares</h1>
+    </section>
 
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
+    <section id="animales">
+        <h2>Animales Disponibles para Adopción</h2>
+        <form id="animal-form">
+            <label for="nombre-animal">Nombre del Animal:</label>
+            <input type="text" id="nombre-animal" name="nombre-animal" required>
+            
+            <label for="descripcion-animal">Descripción:</label>
+            <textarea id="descripcion-animal" name="descripcion-animal" required></textarea>
+            
+            <label for="imagen-animal">Sube una imagen o ingresa URL de Imagen:</label>
+            <input type="file" id="file-animal" name="file-animal">
+            <input type="text" id="imagen-animal" name="imagen-animal" placeholder="o URL de imagen">
+            
+            <button type="submit">Agregar Animal</button>
+        </form>
+        <div class="animal-list"></div>
+    </section>
 
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
             <button type="submit">Enviar</button>
         </form>
-    </div>
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
-
-

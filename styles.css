@@ -1,90 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #f9f7f7;
     color: #333;
-    margin: 0;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    overflow-y: auto;
-    max-height: 50vh;
-}
-
-.contact-form {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    margin-top: 20px;
-}
-
-h1 {
-    color: #4682b4;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #4682b4;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
+nav {
+    width: 100%;
+    background-color: #3B7A57;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #f0ffff;
-    border: 1px solid #b0c4de;
-    border-radius: 4px;
 }
 
-button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #87cefa;
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
     color: white;
-    cursor: pointer;
 }
 
-button.completed {
-    background-color: #32cd32;
+nav ul {
+    list-style: none;
+    display: flex;
 }
 
-button:hover {
-    opacity: 0.8;
+nav ul li {
+    margin: 0 1rem;
 }
 
-input, textarea {
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+section {
+    width: 80%;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+form {
+    margin-bottom: 2rem;
+}
+
+form label, form input, form textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #b0c4de;
-    border-radius: 4px;
+    max-width: 500px;
+    margin: 0.5rem 0;
 }
 
-button[type="submit"] {
-    background-color: #4682b4;
+form input, form textarea {
+    padding: 0.5rem;
+    border: 1px solid #3B7A57;
+    border-radius: 5px;
+}
+
+/* Estilos específicos para la sección de animales */
+section#animales {
+    width: 80%;
+    max-width: 800px; /* Ajusta el tamaño máximo del contenedor */
+    margin: 2rem auto; /* Centra el contenedor horizontalmente */
+    padding: 2rem;
+    border: 2px solid #3B7A57; /* Borde del recuadro */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #fff; /* Fondo blanco para el recuadro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-align: center; /* Centra el texto */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label,
+form input,
+form textarea {
+    width: 100%;
+    max-width: 500px;
+    margin: 0.5rem 0;
+}
+
+form input[type="file"] {
+    padding: 0.5rem;
+}
+
+form input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #3B7A57;
+    border-radius: 5px;
+}
+
+form textarea {
+    padding: 0.5rem;
+    border: 1px solid #3B7A57;
+    border-radius: 5px;
+}
+
+/* Asegurarse de que los botones estén alineados y con el mismo estilo */
+form button {
+    background-color: #3B7A57;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background-color: #2e6d46; /* Color más oscuro al pasar el ratón */
+}
+
+.animal-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem; /* Separación entre el formulario y la lista de animales */
+}
+
+.animal-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.animal-card img {
+    width: 100%;
+    height: auto;
+}
+
+.animal-card h3 {
+    background-color: #3B7A57;
+    padding: 0.5rem;
+    margin: 0;
+    color: #fff; /* Color del texto en el encabezado */
+}
+
+.animal-card p {
+    padding: 0.5rem;
+}
+
+.animal-card .delete-animal,
+.animal-card .adopt-animal {
+    background-color: #3B7A57;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    color: white; /* Color del texto en los botones */
+}
+
+.animal-card .delete-animal:hover,
+.animal-card .adopt-animal:hover {
+    background-color: #2e6d46; /* Color más oscuro al pasar el ratón */
+}
+
+@media (max-width: 768px) {
+    .animal-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
 }
